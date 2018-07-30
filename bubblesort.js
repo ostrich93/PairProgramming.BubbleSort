@@ -2,17 +2,12 @@ function bubbleSort(array, compareFunction = swap){
     let trueCounter = 0;
     while (trueCounter < array.length){
         for (let i=0; i < array.length-trueCounter; i++){
-<<<<<<< HEAD
-            if(compareFunction(array, i, i+1) === 1) {
-                l;
-=======
             //compareFunction(array, i, i+1); //replace with
             let temp = array[i+1];
             if (compareFunction(array, i, i+1) === 1){
                 array[i+1] = array[i];
                 array[i] = temp;
             }
->>>>>>> f6a000fd1922ee3f838ba287dbc82d9cc8ac6b95
         }
         trueCounter++;
     }
@@ -24,13 +19,6 @@ function bubbleSort(array, compareFunction = swap){
     return array;
 }
 
-<<<<<<< HEAD
-function swap (array, ind1, ind2) {
-    if (array[ind1] < array[ind2]){
-        return -1;
-    }
-    else if (array[ind1] > array[ind2]) {
-=======
 // function swap (array, ind1, ind2) {
 //     let temp = array[ind2];
 //     if (array[ind1]> temp){
@@ -48,7 +36,6 @@ function swap(array, ind1, ind2){
         return -1;
     }
     else if (array[ind1] > array[ind2]){
->>>>>>> f6a000fd1922ee3f838ba287dbc82d9cc8ac6b95
         return 1;
     }
     return 0;

@@ -1,5 +1,8 @@
 function split(wholeArray) {
-    var halfWay = Math.floor(wholeArray.length/2);
+    if (wholeArray.length <= 1){
+        return wholeArray;
+    }
+    var halfWay = Math.round(wholeArray.length/2);
     var firstHalf = wholeArray.slice(0, halfWay);
     var secondHalf = wholeArray.slice(halfWay);
     return [firstHalf, secondHalf]
@@ -20,7 +23,8 @@ function split(wholeArray) {
 
 function merge(arr1, arr2){
     let newArr = [];
-    while (newArr.length < (arr1.length + arr2.length)){
+    let totalLength = arr1.length + arr2.length;
+    while (newArr.length < totalLength){
         if (!arr1.length && !arr2.length){
             return newArr;
         }
@@ -39,10 +43,11 @@ function merge(arr1, arr2){
             }
         }
     }
-    console.log(newArr);
+    //console.log(newArr);
     return newArr;
 }
 
-function mergeSort(arr1, arr2){
+function mergeSort(array){
+    let sublists = [];
     
 }
