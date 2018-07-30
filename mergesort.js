@@ -1,11 +1,8 @@
 function split(wholeArray) {
-    if (wholeArray.length <= 1){
-        return wholeArray;
-    }
-    var halfWay = Math.round(wholeArray.length/2);
-    var firstHalf = wholeArray.slice(0, halfWay);
-    var secondHalf = wholeArray.slice(halfWay);
-    return [firstHalf, secondHalf]
+    const halfWay = Math.floor(wholeArray.length/2);
+    const firstHalf = wholeArray.slice(0, halfWay);
+    const secondHalf = wholeArray.slice(halfWay);
+    return [firstHalf, secondHalf];
 }
 
 
@@ -22,39 +19,56 @@ function split(wholeArray) {
 // console.log(mergedArr);
 
 function merge(arr1, arr2){
+    console.log(arr1,arr2);
     let newArr = [];
-    let totalLength = arr1.length + arr2.length;
-    while (newArr.length < totalLength){
-        if (!arr1.length && !arr2.length){
-            return newArr;
-        }
-        if (!arr1.length && arr2.length){
-            newArr.push(arr2.shift());
-        }
-        else if (!arr2.length && arr1.length){
-            newArr.push(arr1.shift());
+    //let totalLength = arr1.length + arr2.length;
+    let leftInd = 0;
+    let rightInd = 0;
+    while (leftInd < arr1.length && rightInd < arr2.length){
+    //     if (!arr1.length && !arr2.length){
+    //         return newArr;
+    //     }
+    //     if (!arr1.length && arr2.length){
+    //         newArr.push(arr2.shift());
+    //     }
+    //     else if (!arr2.length && arr1.length){
+    //         newArr.push(arr1.shift());
+    //     }
+    //     else {
+    //         if (arr1[0] > arr2[0]){
+    //             newArr.push(arr2.shift());
+    //         }
+    //         else {
+    //             newArr.push(arr1.shift());
+    //         }
+    //     }
+        if (arr1[leftInd] < arr2[rightInd]){
+            newArr.push(arr1[leftInd]);
+            leftInd++;
         }
         else {
-            if (arr1[0] > arr2[0]){
-                newArr.push(arr2.shift());
-            }
-            else {
-                newArr.push(arr1.shift());
-            }
+            newArr.push(arr2[rightInd]);
+            rightInd++;
         }
+    }
+    for (; leftInd < arr1.length; leftInd++){
+        newArr.push(arr1[leftInd]);
+    }
+    for (; rightInd < arr2.length; rightInd++){
+        newArr.push(arr2[rightInd]);
     }
     //console.log(newArr);
     return newArr;
 }
 
 function mergeSort(array){
-    let sublists = [];
-    if (array.length === 1) {
-        sublists.push(arr);
+    //for sublists, do split on popped/shifted array
+    if (array.length < 2){
+        return array;
     }
-    else {
-        let splitArray = split(array);
-        split(splitArray);
-    }
-    
+    let sublists = split(array);
+    let left = sublists[0];
+    let right = sublists[1];
+    return merge(mergeSort(left), mergeSort(right));
+
 }
