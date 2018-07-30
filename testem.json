@@ -1,3 +1,7 @@
 {
+<<<<<<< HEAD
     "framework": "jasmine2"
+=======
+    "framework" : "jasmine2"
+>>>>>>> 047461686746e4020b48e543b81a0f6066d50ba2
 }
