@@ -8,16 +8,16 @@ function bubbleSort(array){
         }
         trueCounter++;
     }
-    console.log(array);
-    console.log('number of swaps: ', swapCounter);
+    // console.log(array);
+    // console.log('number of swaps: ', swapCounter);
     return array;
 }
 
-function swap(array, ind1, ind2){
+function swap (array, ind1, ind2) {
     let temp = array[ind2];
     if (array[ind1]> temp){
         array[ind2] = array[ind1];
         array[ind1] = temp;
     }
-    return temp;
+    // return temp;
 }
