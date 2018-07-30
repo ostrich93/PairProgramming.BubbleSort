@@ -1,10 +1,8 @@
-function bubbleSort(array){
+function bubbleSort(array, compareFunction = swap){
     let trueCounter = 0;
-    let swapCounter = 0;
     while (trueCounter < array.length){
         for (let i=0; i < array.length-trueCounter; i++){
-            swap(array, i, i+1);
-            swapCounter++;
+            compareFunction(array, i, i+1);
         }
         trueCounter++;
     }
@@ -21,3 +19,5 @@ function swap (array, ind1, ind2) {
     }
     // return temp;
 }
+
+console.log(bubbleSort([6,5,3,1,8,7,2,4]));
