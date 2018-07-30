@@ -42,4 +42,4 @@ function swap(array, ind1, ind2){
 }
 
 
-console.log(bubbleSort([6,5,3,1,8,7,2,4]));
+//console.log(bubbleSort([6,5,3,1,8,7,2,4]));

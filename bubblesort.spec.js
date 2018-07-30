@@ -16,7 +16,7 @@ describe('Bubble Sort', function(){
     it('expects 36 calls', function() {
       // window.swap();
       bubbleSort([6,5,3,1,8,7,2,4]);
-      console.log(window.swap.calls.count());
+      //console.log(window.swap.calls.count());
       expect(window.swap.calls.count()).toEqual(36);
     })
   });
