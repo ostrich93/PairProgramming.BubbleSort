@@ -7,7 +7,7 @@ describe('Bubble Sort', function(){
     });
 
     it('handles example array in slide', function(){
-        expect( bubbleSort([6,5,3,1,8,7,2,4]) ).toEqual( [1,2,3,4,5,6,7,8] );
+        expect( bubbleSort([6,5,3,1,8,7,2,4],swap) ).toEqual( [1,2,3,4,5,6,7,8] );
       });
     it('expects 36 calls', function() {
       // window.swap();

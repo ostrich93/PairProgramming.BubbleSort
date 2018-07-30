@@ -20,4 +20,10 @@ function swap (array, ind1, ind2) {
     // return temp;
 }
 
-console.log(bubbleSort([6,5,3,1,8,7,2,4]));
+function comparator (a, b) {
+    if (a.age < b.age) return -1; // returning `-1` means "a goes before b"
+    if (a.age > b.age) return 1;  // returning  `1` means "b goes before a"
+    return 0; // returning 0 means "a and b are equivalent"
+  }
+
+console.log(bubbleSort([6,5,3,1,8,7,2,4], comparator));
