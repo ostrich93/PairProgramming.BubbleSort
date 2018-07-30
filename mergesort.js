@@ -49,5 +49,12 @@ function merge(arr1, arr2){
 
 function mergeSort(array){
     let sublists = [];
+    if (array.length === 1) {
+        sublists.push(arr);
+    }
+    else {
+        let splitArray = split(array);
+        split(splitArray);
+    }
     
 }
