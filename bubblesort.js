@@ -2,30 +2,57 @@ function bubbleSort(array, compareFunction = swap){
     let trueCounter = 0;
     while (trueCounter < array.length){
         for (let i=0; i < array.length-trueCounter; i++){
+<<<<<<< HEAD
             if(compareFunction(array, i, i+1) === 1) {
                 l;
+=======
+            //compareFunction(array, i, i+1); //replace with
+            let temp = array[i+1];
+            if (compareFunction(array, i, i+1) === 1){
+                array[i+1] = array[i];
+                array[i] = temp;
+            }
+>>>>>>> f6a000fd1922ee3f838ba287dbc82d9cc8ac6b95
         }
         trueCounter++;
     }
+
+    //using comparator: in while loop, replace 
+
     // console.log(array);
     // console.log('number of swaps: ', swapCounter);
     return array;
 }
 
+<<<<<<< HEAD
 function swap (array, ind1, ind2) {
     if (array[ind1] < array[ind2]){
         return -1;
     }
     else if (array[ind1] > array[ind2]) {
+=======
+// function swap (array, ind1, ind2) {
+//     let temp = array[ind2];
+//     if (array[ind1]> temp){
+//         array[ind2] = array[ind1];
+//         array[ind1] = temp;
+//     }
+//     // return temp;
+// }
+
+//replace swap with
+
+
+function swap(array, ind1, ind2){
+    if (array[ind1] < array[ind2]){
+        return -1;
+    }
+    else if (array[ind1] > array[ind2]){
+>>>>>>> f6a000fd1922ee3f838ba287dbc82d9cc8ac6b95
         return 1;
     }
-    // return temp;
+    return 0;
 }
 
-function comparator (a, b) {
-    if (a.age < b.age) return -1; // returning `-1` means "a goes before b"
-    if (a.age > b.age) return 1;  // returning  `1` means "b goes before a"
-    return 0; // returning 0 means "a and b are equivalent"
-  }
 
-console.log(bubbleSort([6,5,3,1,8,7,2,4], comparator));
+//console.log(bubbleSort([6,5,3,1,8,7,2,4]));
